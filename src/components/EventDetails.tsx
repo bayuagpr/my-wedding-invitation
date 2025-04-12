@@ -11,7 +11,7 @@ export default function EventDetails() {
           <div className="mb-16">
             <h3 className="text-xl md:text-2xl text-center text-primary mb-6">Akad Nikah</h3>
             <div className="bg-card p-8 rounded-lg text-center shadow-md">
-              <p className="text-primary mb-2">Saturday, 27th July 2025</p>
+              <p className="text-primary mb-2">Sunday, 27th July 2025</p>
               <p className="text-primary mb-4">08:00 WIB</p>
               <p className="text-primary/80 mb-6">
                 Lapangan Sepak Bola RW 08 Cimpaeun<br />
@@ -33,7 +33,7 @@ export default function EventDetails() {
           <div>
             <h3 className="text-xl md:text-2xl text-center text-primary mb-6">Reception</h3>
             <div className="bg-card p-8 rounded-lg text-center shadow-md">
-              <p className="text-primary mb-2">Saturday, 27th July 2025</p>
+              <p className="text-primary mb-2">Sunday, 27th July 2025</p>
               <p className="text-primary mb-4">11:00 - 14:00 WIB</p>
               <p className="text-primary/80 mb-6">
                 Lapangan Sepak Bola RW 08 Cimpaeun<br />

@@ -17,7 +17,7 @@ export default function Header() {
           Shahya & Bayu
         </h1>
         <p className="text-md md:text-lg text-white uppercase tracking-wider">
-          SATURDAY, 27TH JULY 2025
+          Sunday, 27th July 2025
         </p>
       </div>
     </header>

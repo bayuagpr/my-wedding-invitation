@@ -21,7 +21,7 @@ export default function Hero() {
           We're Getting Married
         </p>
         <p className="text-lg md:text-xl text-primary-foreground/70">
-          Saturday, 20 July 2024
+          Sunday, 27 July 2025
         </p>
       </div>
     </section>

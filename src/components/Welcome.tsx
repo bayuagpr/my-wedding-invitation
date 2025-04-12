@@ -44,7 +44,7 @@ export default function Welcome({ guestName, onOpenInvitation }: WelcomeProps) {
               <h2 className="text-sm uppercase tracking-[0.25em] text-primary/70 mb-4">THE WEDDING OF</h2>
               <h1 className="text-5xl md:text-6xl mb-2 text-primary">Shahya & Bayu</h1>
               <p className="text-sm uppercase tracking-[0.15em] text-primary/70 mt-4">
-                SATURDAY, 27TH JULY 2025
+                Sunday, 27th July 2025
               </p>
             </div>
 
