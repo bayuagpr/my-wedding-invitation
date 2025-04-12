@@ -86,13 +86,13 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-[#10191e]" id="gallery">
+    <section className="py-20 bg-background" id="gallery">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-white mb-8">
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-8">
           OUR PRE-WEDDING<br />CELEBRATION
         </h2>
 
-        <h3 className="text-3xl text-center text-white mb-12">
+        <h3 className="text-3xl text-center text-primary mb-12">
           Shahya & Bayu
         </h3>
 
@@ -108,14 +108,14 @@ export default function Gallery() {
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white text-sm">View</span>
+              <div className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-primary-foreground text-sm">View</span>
               </div>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-white/70 mt-8">
+        <p className="text-center text-primary/70 mt-8">
           Click image for preview
         </p>
       </div>

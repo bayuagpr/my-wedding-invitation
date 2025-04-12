@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="relative h-screen flex items-center justify-center bg-[#10191e]" id="home">
+    <header className="relative h-screen flex items-center justify-center bg-background" id="home">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{

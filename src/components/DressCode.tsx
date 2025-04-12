@@ -1,15 +1,15 @@
 export default function DressCode() {
   return (
-    <section className="py-20 bg-[#10191e]" id="dresscode">
+    <section className="py-20 bg-background" id="dresscode">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl text-center text-white mb-8">Shahya & Bayu</h2>
+        <h2 className="text-3xl text-center text-primary mb-8">Shahya & Bayu</h2>
 
-        <h3 className="text-xl md:text-2xl text-center text-white mb-8">
+        <h3 className="text-xl md:text-2xl text-center text-primary mb-8">
           A Guide to Dress Codes
         </h3>
 
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-white/80 mb-12">
+          <p className="text-primary/80 mb-12">
             We'd love you to match these colors, but no pressure at all!<br />
             Feel free to wear what feels good for you.
           </p>

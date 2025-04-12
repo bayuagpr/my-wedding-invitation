@@ -1,61 +1,54 @@
 export default function EventDetails() {
   return (
-    <section className="py-20 bg-[#10191e]" id="weddingevent">
+    <section className="py-20 bg-background" id="event">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-white mb-16">
-          save our date
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-12">
+          Event Details
         </h2>
 
-        <div className="text-center mb-16">
-          <h3 className="text-3xl md:text-4xl text-white mb-2">SUNDAY</h3>
-          <h3 className="text-xl md:text-2xl text-white/80">27th JULY 2025</h3>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {/* Holy Matrimony */}
-          <div className="text-center">
-            <h3 className="text-2xl text-white mb-4">Holy Matrimony</h3>
-            <p className="text-lg text-white/80 mb-8">08.00 AM - 10.00 AM</p>
-
-            <div className="mb-6">
-              <p className="text-lg text-white mb-2">GKJ Magelang</p>
-              <p className="text-base text-white/70">
-                Jl. Tentara Pelajar No.106, Kemirirejo,
-                <br />Kota Magelang, Jawa Tengah
+        <div className="max-w-3xl mx-auto">
+          {/* Akad Nikah */}
+          <div className="mb-16">
+            <h3 className="text-xl md:text-2xl text-center text-primary mb-6">Akad Nikah</h3>
+            <div className="bg-card p-8 rounded-lg text-center shadow-md">
+              <p className="text-primary mb-2">Saturday, 27th July 2025</p>
+              <p className="text-primary mb-4">08:00 WIB</p>
+              <p className="text-primary/80 mb-6">
+                Lapangan Sepak Bola RW 08 Cimpaeun<br />
+                Kecamatan Tapos<br />
+                <br />Kota Depok, Jawa Barat
               </p>
+              <a
+                href="https://maps.app.goo.gl/SknFavRPqZ1zPHnu9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-none hover:bg-primary/90 transition-colors"
+              >
+                View on Google Maps
+              </a>
             </div>
-
-            <a
-              href="https://maps.app.goo.gl/ySAz8Fed7BSC6AJq5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-transparent border border-white text-white px-4 py-2 text-sm uppercase tracking-wider hover:bg-white/10 transition-colors"
-            >
-              GOOGLE MAPS
-            </a>
           </div>
 
-          {/* Wedding Reception */}
-          <div className="text-center">
-            <h3 className="text-2xl text-white mb-4">Wedding Reception</h3>
-            <p className="text-lg text-white/80 mb-8">12.00 PM - 01.30 PM</p>
-
-            <div className="mb-6">
-              <p className="text-lg text-white mb-2">Villa Grand Artos</p>
-              <p className="text-base text-white/70">
-                Jl. Cempaka, Jurangombo Utara,
-                <br />Kec. Magelang Sel., Kota Magelang, Jawa Tengah
+          {/* Reception */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-center text-primary mb-6">Reception</h3>
+            <div className="bg-card p-8 rounded-lg text-center shadow-md">
+              <p className="text-primary mb-2">Saturday, 27th July 2025</p>
+              <p className="text-primary mb-4">11:00 - 14:00 WIB</p>
+              <p className="text-primary/80 mb-6">
+                Lapangan Sepak Bola RW 08 Cimpaeun<br />
+                Kecamatan Tapos<br />
+                <br />Kota Depok, Jawa Barat
               </p>
+              <a
+                href="https://maps.app.goo.gl/SknFavRPqZ1zPHnu9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-none hover:bg-primary/90 transition-colors"
+              >
+                View on Google Maps
+              </a>
             </div>
-
-            <a
-              href="https://maps.app.goo.gl/LgPeQZRtGZsSQQ2s7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-transparent border border-white text-white px-4 py-2 text-sm uppercase tracking-wider hover:bg-white/10 transition-colors"
-            >
-              GOOGLE MAPS
-            </a>
           </div>
         </div>
       </div>

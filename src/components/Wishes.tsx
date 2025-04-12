@@ -51,20 +51,20 @@ export default function Wishes() {
   const currentWish = wishes[currentWishIndex];
 
   return (
-    <section className="pt-10 pb-20 bg-[#10191e]" id="wishes">
+    <section className="pt-10 pb-20 bg-background" id="wishes">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-white mb-12">
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-12">
           Wishes
         </h2>
 
-        <div className="max-w-2xl mx-auto p-8 bg-[#0c1419] relative rounded-lg">
+        <div className="max-w-2xl mx-auto p-8 bg-card relative rounded-lg shadow-md">
           {/* Navigation buttons */}
           <div className="flex justify-between absolute top-1/2 -translate-y-1/2 w-full left-0 px-4">
             <Button
               variant="outline"
               size="icon"
               onClick={prevWish}
-              className="bg-transparent border-white/30 text-white hover:bg-white/10 h-10 w-10 rounded-full"
+              className="bg-transparent border-primary/30 text-primary hover:bg-primary/10 h-10 w-10 rounded-full"
             >
               <span className="sr-only">Previous wish</span>
               <ChevronLeftIcon />
@@ -73,7 +73,7 @@ export default function Wishes() {
               variant="outline"
               size="icon"
               onClick={nextWish}
-              className="bg-transparent border-white/30 text-white hover:bg-white/10 h-10 w-10 rounded-full"
+              className="bg-transparent border-primary/30 text-primary hover:bg-primary/10 h-10 w-10 rounded-full"
             >
               <span className="sr-only">Next wish</span>
               <ChevronRightIcon />
@@ -82,9 +82,9 @@ export default function Wishes() {
 
           {/* Wish content */}
           <div className="text-center px-10">
-            <h3 className="text-xl text-white font-bold mb-4">{currentWish.name}</h3>
-            <p className="text-white/80 italic mb-6">"{currentWish.message}"</p>
-            <p className="text-sm text-white/60">{currentWish.date}</p>
+            <h3 className="text-xl text-primary font-bold mb-4">{currentWish.name}</h3>
+            <p className="text-primary/80 italic mb-6">"{currentWish.message}"</p>
+            <p className="text-sm text-primary/60">{currentWish.date}</p>
           </div>
         </div>
       </div>

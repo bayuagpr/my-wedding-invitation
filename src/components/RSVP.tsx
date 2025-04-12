@@ -64,17 +64,17 @@ export default function RSVP() {
   }
 
   return (
-    <section className="py-20 bg-[#10191e]" id="rsvp">
+    <section className="py-20 bg-background" id="rsvp">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-white mb-10">
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
           Kindly Confirm Your Presence and Share Your Blessings
         </h2>
-        <p className="text-center text-white/70 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-primary/70 max-w-2xl mx-auto mb-12">
           We'd be honored by your presence and delighted to receive your kind wishes.
           Please confirm your attendance below.
         </p>
 
-        <div className="max-w-xl mx-auto bg-[#0c1419] p-8 rounded-lg">
+        <div className="max-w-xl mx-auto bg-card p-8 rounded-lg shadow-md">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {/* Name Field */}
@@ -83,11 +83,11 @@ export default function RSVP() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Name</FormLabel>
+                    <FormLabel className="text-primary">Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your name"
-                        className="bg-transparent border-white/30 text-white"
+                        className="bg-transparent border-primary/30 text-primary"
                         {...field}
                         required
                       />
@@ -99,14 +99,14 @@ export default function RSVP() {
 
               {/* Attendance Field */}
               <div>
-                <FormLabel className="text-white block mb-2">Attendance</FormLabel>
+                <FormLabel className="text-primary block mb-2">Attendance</FormLabel>
                 <div className="flex gap-4">
                   <Button
                     type="button"
                     className={`flex-1 ${
                       attendance === "attending"
-                        ? "bg-white text-[#10191e]"
-                        : "bg-transparent border border-white/30 text-white hover:bg-white/10"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-transparent border border-primary/30 text-primary hover:bg-primary/10"
                     }`}
                     onClick={() => handleAttendanceChange("attending")}
                   >
@@ -116,8 +116,8 @@ export default function RSVP() {
                     type="button"
                     className={`flex-1 ${
                       attendance === "unable"
-                        ? "bg-white text-[#10191e]"
-                        : "bg-transparent border border-white/30 text-white hover:bg-white/10"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-transparent border border-primary/30 text-primary hover:bg-primary/10"
                     }`}
                     onClick={() => handleAttendanceChange("unable")}
                   >
@@ -129,20 +129,20 @@ export default function RSVP() {
               {/* Number of Guests Field */}
               {attendance === "attending" && (
                 <div>
-                  <FormLabel className="text-white block mb-2">No of Guest (Max 2)</FormLabel>
+                  <FormLabel className="text-primary block mb-2">No of Guest (Max 2)</FormLabel>
                   <div className="flex items-center">
                     <Button
                       type="button"
                       onClick={decreaseGuests}
-                      className="bg-transparent border border-white/30 text-white hover:bg-white/10 h-10 w-10 rounded-full p-0"
+                      className="bg-transparent border border-primary/30 text-primary hover:bg-primary/10 h-10 w-10 rounded-full p-0"
                     >
                       -
                     </Button>
-                    <span className="text-white mx-4 w-8 text-center">{guestCount}</span>
+                    <span className="text-primary mx-4 w-8 text-center">{guestCount}</span>
                     <Button
                       type="button"
                       onClick={increaseGuests}
-                      className="bg-transparent border border-white/30 text-white hover:bg-white/10 h-10 w-10 rounded-full p-0"
+                      className="bg-transparent border border-primary/30 text-primary hover:bg-primary/10 h-10 w-10 rounded-full p-0"
                     >
                       +
                     </Button>
@@ -156,11 +156,11 @@ export default function RSVP() {
                 name="wishes"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Wishes</FormLabel>
+                    <FormLabel className="text-primary">Wishes</FormLabel>
                     <FormControl>
                       <textarea
                         placeholder="Your wishes for the couple"
-                        className="w-full bg-transparent border border-white/30 rounded-md p-2 text-white h-24"
+                        className="w-full bg-transparent border border-primary/30 rounded-md p-2 text-primary h-24"
                         {...field}
                       />
                     </FormControl>
@@ -172,7 +172,7 @@ export default function RSVP() {
               <Button
                 type="submit"
                 disabled={!attendance || submitted}
-                className="w-full bg-white text-[#10191e] hover:bg-white/90"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 {submitted ? "Thank you for your response!" : "Submit"}
               </Button>
