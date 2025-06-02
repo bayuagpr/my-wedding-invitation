@@ -25,8 +25,8 @@ export default function Navigation({ isInvitationOpen }: NavigationProps) {
       {/* Desktop Navigation */}
       <nav 
         className={cn(
-          "hidden md:flex fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-card/90 backdrop-blur-sm rounded-full px-6 py-3 border border-accent/20 shadow-lg",
-          "transition-opacity duration-700 ease-in-out",
+          "hidden md:flex fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 border border-accent/20 shadow-lg",
+          "transition-opacity duration-700 ease-in-out min-w-[600px]",
           isInvitationOpen ? "opacity-100" : "opacity-0"
         )}
       >
@@ -54,7 +54,7 @@ export default function Navigation({ isInvitationOpen }: NavigationProps) {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:foreground hover:bg-primary/90 h-9 bg-primary p-3 rounded-full shadow-lg border border-accent/20 flex items-center justify-center"
+          className="gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:foreground h-9 bg-background/80 p-3 rounded-full shadow-lg border border-accent/20 flex items-center justify-center"
         >
           <span className="sr-only">Open menu</span>
           <MenuIcon isOpen={isOpen} />
@@ -95,19 +95,19 @@ function MenuIcon({ isOpen }: { isOpen: boolean }) {
     <div className="w-6 h-6 relative flex items-center justify-center">
       <span
         className={cn(
-          "absolute w-6 h-0.5 bg-white transition-all duration-300",
+          "absolute w-6 h-0.5 bg-primary transition-all duration-300",
           isOpen ? "rotate-45" : "-translate-y-2"
         )}
       />
       <span
         className={cn(
-          "absolute w-6 h-0.5 bg-white transition-all duration-300",
+          "absolute w-6 h-0.5 bg-primary transition-all duration-300",
           isOpen ? "opacity-0" : "opacity-100"
         )}
       />
       <span
         className={cn(
-          "absolute w-6 h-0.5 bg-white transition-all duration-300",
+          "absolute w-6 h-0.5 bg-primary transition-all duration-300",
           isOpen ? "-rotate-45" : "translate-y-2"
         )}
       />
