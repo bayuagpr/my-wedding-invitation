@@ -32,7 +32,7 @@ export default function GroomProfile() {
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_30%]"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856465/OSM-10-rev_u7v0hq.jpg)`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748900273/OSM-10-rev-2_un86ns.jpg)`,
         }}
       ></div>
     </div>

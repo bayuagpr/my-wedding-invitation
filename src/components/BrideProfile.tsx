@@ -7,7 +7,7 @@ export default function BrideProfile() {
       <div
         className="relative w-full h-[420px] md:h-[700px] overflow-hidden bg-no-repeat bg-[99%_30%] bg-[size:170%] md:bg-[size:150%]"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856464/OSM-3-rev_fmbfyl.jpg)`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748900273/OSM-3-rev-2_sfuw2j.jpg)`,
         }}
       >
         {/* Dark overlay for better text readability */}
