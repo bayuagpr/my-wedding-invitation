@@ -93,7 +93,7 @@ export default function Gallery() {
         </h2>
 
         <h3 className="text-3xl text-center text-primary mb-12">
-          Shahya & Bayu
+          Bayu & Shahya
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

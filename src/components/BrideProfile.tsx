@@ -19,7 +19,7 @@ export default function BrideProfile() {
           <h3 className="text-2xl md:text-3xl mb-3">The Bride</h3>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">Putri Shahya Maharani</h2>
           <p className="text-lg md:text-xl mb-2">Daughter of</p>
-          <p className="text-lg md:text-xl mb-6">Bapak Azra Erwan Sofyan (Alm) & Karina Yulianti Dewi</p>
+          <p className="text-lg md:text-xl mb-6">Bapak Azra Erwan Sofyan (Alm) & Ibu Karina Yulianti Dewi</p>
           <a
             href="https://www.instagram.com/ayuudiwidi/"
             target="_blank"

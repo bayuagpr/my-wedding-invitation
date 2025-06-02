@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "Groom & Bride", href: "#profile" },
-  { name: "Wedding Event", href: "#weddingevent" },
+  { name: "Groom & Bride", href: "#couple" },
+  { name: "Wedding Event", href: "#event" },
   { name: "RSVP", href: "#rsvp" },
-  { name: "Wedding Gift", href: "#weddinggift" },
+  { name: "Wedding Gift", href: "#gift" },
   { name: "Prewedding Gallery", href: "#gallery" }
 ];
 
