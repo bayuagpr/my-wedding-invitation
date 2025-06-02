@@ -33,7 +33,7 @@ export default function Welcome({ guestName, onOpenInvitation }: WelcomeProps) {
           {/* Left side - Wedding couple photo */}
           <div className="relative hidden md:block">
             <img
-              src={weddingCoupleImage.src}
+              src="https://res.cloudinary.com/dizje8tlf/image/upload/v1748856443/OSM-48_hejhs5.jpg"
               alt="Shahya and Bayu Pre-Wedding"
               className="object-cover h-full w-full rounded-l-lg"
             />

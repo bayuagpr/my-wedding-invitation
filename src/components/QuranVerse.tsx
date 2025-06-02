@@ -5,7 +5,7 @@ export default function QuranVerse() {
     <section className="py-24 bg-background relative" id="verse">
       <div
         className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
-        style={{ backgroundImage: `url(${weddingHero.src})`, filter: 'brightness(0.5)' }}
+        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856445/OSM-51_jdgbz8.jpg)`, filter: 'brightness(0.5)' }}
       />
 
       <div className="container mx-auto px-4 relative z-10 text-center">

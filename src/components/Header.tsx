@@ -6,7 +6,7 @@ export default function Header() {
       <div
         className="absolute inset-0 bg-cover bg-[55%_10%] md:bg-center"
         style={{
-          backgroundImage: `url(${weddingHero.src})`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856434/OSM-11_b8hidc.jpg)`,
           // filter: 'brightness(0.5)'
         }}
       />

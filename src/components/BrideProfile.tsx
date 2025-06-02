@@ -7,7 +7,7 @@ export default function BrideProfile() {
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-no-repeat bg-[99%_30%]"
         style={{
-          backgroundImage: `url(${brideMain1.src})`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856464/OSM-3-rev_fmbfyl.jpg)`,
           backgroundSize: '150%'
         }}
       >
@@ -33,7 +33,7 @@ export default function BrideProfile() {
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_15%]"
         style={{
-          backgroundImage: `url(${brideMain2.src})`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856432/OSM-5_fq3ttw.jpg)`,
         }}
       ></div>
     </div>

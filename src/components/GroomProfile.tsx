@@ -7,7 +7,7 @@ export default function GroomProfile() {
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-no-repeat bg-[1%_15%]"
         style={{
-          backgroundImage: `url(${groomMain1.src})`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856431/OSM-8_ucmzab.jpg)`,
           backgroundSize: '150%'
         }}
       >
@@ -33,7 +33,7 @@ export default function GroomProfile() {
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_30%]"
         style={{
-          backgroundImage: `url(${groomMain2.src})`,
+          backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856465/OSM-10-rev_u7v0hq.jpg)`,
         }}
       ></div>
     </div>
