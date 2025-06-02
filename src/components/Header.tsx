@@ -1,12 +1,23 @@
 import weddingHero from "@/assets/OSM-11.jpg"
 import BlurText from "@/components/ui/BlurText/BlurText"
+import { useScroll, useTransform, motion } from 'framer-motion'
+import { useRef } from 'react'
 
 export default function Header() {
+  const container = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end start']
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"])
+
   return (
-    <header className="relative h-screen flex justify-center items-start 2xl:items-center 2xl:justify-start bg-background" id="home">
-      <div
+    <header ref={container} className="relative h-screen flex justify-center items-start 2xl:items-center 2xl:justify-start bg-background overflow-hidden" id="home">
+      <motion.div
         className="absolute inset-0 bg-cover bg-[55%_10%] md:bg-center"
         style={{
+          y,
           backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856434/OSM-11_b8hidc.jpg)`,
           // filter: 'brightness(0.5)'
         }}

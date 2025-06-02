@@ -7,7 +7,7 @@ export default function CoupleProfile() {
     <section className="bg-background" id="couple">
       <div>
         <GroomProfile />
-        <div className="h-96 flex items-center">
+        <div className="h-96 flex items-center overflow-hidden">
           <ScrollVelocity
             texts={["#BAYUakhirnyaSAHYA", "#BAYUakhirnyaSAHYA"]}
             velocity={100}
