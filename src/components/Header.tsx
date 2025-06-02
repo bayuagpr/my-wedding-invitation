@@ -1,4 +1,5 @@
 import weddingHero from "@/assets/OSM-11.jpg"
+import BlurText from "@/components/ui/BlurText/BlurText"
 
 export default function Header() {
   return (
@@ -12,15 +13,27 @@ export default function Header() {
       />
 
       <div className="relative z-10 text-center 2xl:text-left 2xl:pl-40 2xl:mb-20 md:mt-10 mt-12">
-        <h2 className="text-lg md:text-xl 2xl:text-2xl text-primary mb-4 uppercase tracking-widest">
-          THE WEDDING OF
-        </h2>
-        <h1 className="text-5xl md:text-7xl text-primary mb-6 font-light">
-          Bayu & Shahya
-        </h1>
-        <p className="text-md md:text-lg 2xl:text-xl text-primary uppercase tracking-wider">
-          Sunday, 27th July 2025
-        </p>
+        <BlurText
+          text="THE WEDDING OF"
+          className="text-lg md:text-xl 2xl:text-2xl text-primary mb-4 uppercase tracking-widest"
+          delay={100}
+          animateBy="words"
+          direction="top"
+        />
+        <BlurText
+          text="Bayu & Shahya"
+          className="text-5xl md:text-7xl text-primary mb-6 font-light"
+          delay={150}
+          animateBy="words"
+          direction="top"
+        />
+        <BlurText
+          text="Sunday, 27th July 2025"
+          className="text-md md:text-lg 2xl:text-xl text-primary uppercase tracking-wider"
+          delay={200}
+          animateBy="words"
+          direction="top"
+        />
       </div>
     </header>
   );

@@ -34,8 +34,8 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
       <Navigation isInvitationOpen={isInvitationOpen} />
       <BackgroundMusic />
 
-      <main>
-          <Header />
+      {isInvitationOpen &&<main>
+        <Header />
         <ScrollAnimation delay={0.2}>
           <QuranVerse />
         </ScrollAnimation>
@@ -57,9 +57,9 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
         <ScrollAnimation delay={0.8}>
           <Gallery />
         </ScrollAnimation>
-      </main>
+      </main>}
 
-      <Footer />
+      {isInvitationOpen && <Footer />}
     </>
   );
 } 

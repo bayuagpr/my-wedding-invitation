@@ -92,10 +92,6 @@ export default function Gallery() {
           OUR PRE-WEDDING<br />CELEBRATION
         </h2>
 
-        <h3 className="text-3xl text-center text-primary mb-12">
-          Bayu & Shahya
-        </h3>
-
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
             <div

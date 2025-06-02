@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-2xl text-primary">Shahya & Bayu</h3>
+          <h3 className="text-2xl text-primary">Bayu & Shahya</h3>
         </div>
       </div>
     </footer>

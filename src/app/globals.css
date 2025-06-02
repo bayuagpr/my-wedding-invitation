@@ -36,13 +36,13 @@
 
 @layer base {
   :root {
-    --background: 336 10% 90%;
-    /* #E9E4E6 */
+    --background: 15 100% 2%;
+    /* #080200 */
     --foreground: 10 76% 55%;
     /* #E35336 */
 
-    --card: 25 45% 85%;
-    /* #EADBC8 */
+    --card: 15 100% 2%;
+    /* #080200 */
     --card-foreground: 220 70% 20%;
 
     --popover: 40 30% 98%;
@@ -81,7 +81,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Ovo', serif;
+    font-family: 'Candlefish', serif;
   }
 
   h1,
