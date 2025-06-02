@@ -1,12 +1,20 @@
-import brideMain1 from "@/assets/OSM-3-rev.jpg"
-import brideMain2 from "@/assets/OSM-5.jpg"
+import { useScroll, useTransform, motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
 export default function BrideProfile() {
+    const container = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end start']
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", window.innerWidth < 768 ? "300px" : "700px"])
   return (
-    <div>
-      <div
+    <div ref={container}>
+      <motion.div
         className="relative w-full h-[420px] md:h-[700px] overflow-hidden bg-no-repeat bg-[99%_30%] bg-[size:170%] md:bg-[size:150%]"
         style={{
+          y,
           backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748900273/OSM-3-rev-2_sfuw2j.jpg)`,
         }}
       >
@@ -20,7 +28,7 @@ export default function BrideProfile() {
           <p className="text-md md:text-lg lg:text-xl md:mb-2">Daughter of</p>
           <p className="text-md md:text-lg lg:text-xl mb-4 md:mb-6 w-[220px] md:w-full">Bapak Azra Erwan Sofyan (Alm) & Ibu Karina Yulianti Dewi</p>
           <a
-            href="https://www.instagram.com/ayuudiwidi/"
+            href="https://www.instagram.com/misshahya/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-primary/80 hover:text-primary transition-colors text-sm md:text-lg"
@@ -28,7 +36,7 @@ export default function BrideProfile() {
             @misshahya
           </a>
         </div>
-      </div>
+      </motion.div>
       <div
         className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_15%]"
         style={{

@@ -43,7 +43,7 @@ export default function BackgroundMusic() {
       </audio>
       <Button
         onClick={toggleMusic}
-        className="fixed bottom-24 right-8 z-50 bg-background/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/10 hover:bg-background/90 hover:scale-105 transition-all duration-300"
+        className="fixed bottom-24 right-4 z-50 bg-background/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/10 hover:bg-background/90 hover:scale-105 transition-all duration-300"
       >
         {isPlaying ? <VolumeX className="h-5 w-5 text-primary" /> : <Music className="h-5 w-5 text-primary" />}
       </Button>

@@ -47,7 +47,7 @@ export default function Navigation({ isInvitationOpen }: NavigationProps) {
       {/* Mobile Navigation Button */}
       <div 
         className={cn(
-          "fixed md:hidden bottom-8 right-8 z-50",
+          "fixed md:hidden bottom-8 right-4 z-50",
           "transition-opacity duration-700 ease-in-out",
           isInvitationOpen ? "opacity-100" : "opacity-0"
         )}
