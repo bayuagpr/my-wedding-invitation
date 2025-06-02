@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-10 bg-card">
+    <footer className="py-10 bg-[#EAE5E7]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl text-primary mb-4">Forever Grateful</h2>
@@ -10,8 +10,12 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h3 className="text-2xl text-primary">Bayu & Shahya</h3>
+        </div>
+        <div className="text-center mb-24 rounded-lg p-4">
+          <h3 className="text-lg text-primary">made by bayu</h3>
+          <h3 className="text-md text-primary">(yes you're correct, the groom made this website 😅)</h3>
         </div>
       </div>
     </footer>

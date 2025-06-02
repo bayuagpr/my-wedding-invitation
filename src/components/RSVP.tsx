@@ -87,7 +87,7 @@ export default function RSVP() {
                     <FormControl>
                       <Input
                         placeholder="Your name"
-                        className="bg-transparent border-primary/30 text-primary"
+                        className="bg-transparent border-primary/30 text-white"
                         {...field}
                         required
                       />
@@ -138,7 +138,7 @@ export default function RSVP() {
                     >
                       -
                     </Button>
-                    <span className="text-primary mx-4 w-8 text-center">{guestCount}</span>
+                    <span className="text-white mx-4 w-8 text-center">{guestCount}</span>
                     <Button
                       type="button"
                       onClick={increaseGuests}
@@ -160,7 +160,7 @@ export default function RSVP() {
                     <FormControl>
                       <textarea
                         placeholder="Your wishes for the couple"
-                        className="w-full bg-transparent border border-primary/30 rounded-md p-2 text-primary h-24"
+                        className="w-full bg-transparent border border-primary/30 rounded-md p-2 text-white h-24"
                         {...field}
                       />
                     </FormControl>
