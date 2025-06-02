@@ -86,7 +86,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-textured" id="gallery">
+    <section className="py-20 bg-background" id="gallery">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-8">
           OUR PRE-WEDDING<br />CELEBRATION

@@ -80,7 +80,7 @@
   }
 
   body {
-    @apply bg-textured text-foreground;
+    @apply bg-background text-foreground;
     font-family: 'Ovo', serif;
   }
 
