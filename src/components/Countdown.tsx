@@ -39,7 +39,7 @@ export default function Countdown() {
   }, [weddingDate]);
 
   return (
-    <section className="py-16 bg-background" id="countdown">
+    <section className="py-16 bg-textured" id="countdown">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
           COUNTING DOWN TO<br />OUR SPECIAL MOMENT

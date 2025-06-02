@@ -1,6 +1,6 @@
 export default function EventDetails() {
   return (
-    <section className="py-20 bg-background" id="event">
+    <section className="py-20 bg-textured" id="event">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-12">
           Event Details

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
+import weddingCoupleImage from "@/assets/OSM-48.jpg"
 
 interface WelcomeProps {
   guestName?: string;
@@ -32,7 +33,7 @@ export default function Welcome({ guestName, onOpenInvitation }: WelcomeProps) {
           {/* Left side - Wedding couple photo */}
           <div className="relative hidden md:block">
             <img
-              src="https://ext.same-assets.com/2165661133/2979611549.jpeg"
+              src={weddingCoupleImage.src}
               alt="Shahya and Bayu Pre-Wedding"
               className="object-cover h-full w-full rounded-l-lg"
             />
@@ -42,7 +43,7 @@ export default function Welcome({ guestName, onOpenInvitation }: WelcomeProps) {
           <div className="bg-background p-8 flex flex-col justify-center items-center text-center rounded-lg md:rounded-l-none">
             <div className="my-8 animate-fade-in">
               <h2 className="text-sm uppercase tracking-[0.25em] text-primary/70 mb-4">THE WEDDING OF</h2>
-              <h1 className="text-5xl md:text-6xl mb-2 text-primary">Shahya & Bayu</h1>
+              <h1 className="text-5xl md:text-6xl mb-2 text-primary">Bayu & Shahya</h1>
               <p className="text-sm uppercase tracking-[0.15em] text-primary/70 mt-4">
                 Sunday, 27th July 2025
               </p>

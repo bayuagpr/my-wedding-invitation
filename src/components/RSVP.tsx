@@ -64,7 +64,7 @@ export default function RSVP() {
   }
 
   return (
-    <section className="py-20 bg-background" id="rsvp">
+    <section className="py-20 bg-textured" id="rsvp">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
           Kindly Confirm Your Presence and Share Your Blessings

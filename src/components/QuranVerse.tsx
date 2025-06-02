@@ -1,9 +1,11 @@
+import weddingHero from "@/assets/OSM-51.jpg"
+
 export default function QuranVerse() {
   return (
     <section className="py-24 bg-background relative" id="verse">
       <div
-        className="absolute inset-0 bg-[url('https://ext.same-assets.com/2165661133/2979611549.jpeg')] bg-cover bg-center opacity-10"
-        style={{ filter: 'brightness(0.5)' }}
+        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
+        style={{ backgroundImage: `url(${weddingHero.src})`, filter: 'brightness(0.5)' }}
       />
 
       <div className="container mx-auto px-4 relative z-10 text-center">

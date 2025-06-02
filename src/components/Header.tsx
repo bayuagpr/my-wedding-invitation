@@ -1,22 +1,24 @@
+import weddingHero from "@/assets/OSM-11.jpg"
+
 export default function Header() {
   return (
-    <header className="relative h-screen flex items-center justify-center bg-background" id="home">
+    <header className="relative h-screen flex justify-center items-start 2xl:items-center 2xl:justify-start bg-background" id="home">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-60"
+        className="absolute inset-0 bg-cover bg-[55%_10%] md:bg-center"
         style={{
-          backgroundImage: "url('https://ext.same-assets.com/2165661133/2979611549.jpeg')",
-          filter: 'brightness(0.5)'
+          backgroundImage: `url(${weddingHero.src})`,
+          // filter: 'brightness(0.5)'
         }}
       />
 
-      <div className="relative z-10 text-center px-4">
-        <h2 className="text-lg md:text-xl text-white mb-4 uppercase tracking-widest">
+      <div className="relative z-10 text-center 2xl:text-left 2xl:pl-40 2xl:mb-20 md:mt-10 mt-12">
+        <h2 className="text-lg md:text-xl 2xl:text-2xl text-primary mb-4 uppercase tracking-widest">
           THE WEDDING OF
         </h2>
-        <h1 className="text-5xl md:text-7xl text-white mb-6 font-light">
-          Shahya & Bayu
+        <h1 className="text-5xl md:text-7xl text-primary mb-6 font-light">
+          Bayu & Shahya
         </h1>
-        <p className="text-md md:text-lg text-white uppercase tracking-wider">
+        <p className="text-md md:text-lg 2xl:text-xl text-primary uppercase tracking-wider">
           Sunday, 27th July 2025
         </p>
       </div>
