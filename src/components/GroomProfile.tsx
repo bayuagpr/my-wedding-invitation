@@ -1,14 +1,14 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion, useTransform } from "framer-motion";
+import { useRef, memo } from "react";
+import { useTargetScroll } from "@/hooks/useScrollContext";
+import { useParallaxDistance } from "@/hooks/useWindowDimensions";
 
-export default function GroomProfile() {
-  const container = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end start']
-  })
+const GroomProfile = memo(function GroomProfile() {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useTargetScroll(container);
+  const parallaxDistance = useParallaxDistance();
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0px", window.innerWidth < 768 ? "300px" : "700px"])
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", parallaxDistance]);
   return (
     <div ref={container}>
       <motion.div
@@ -45,4 +45,6 @@ export default function GroomProfile() {
       ></div>
     </div>
   );
-}
+});
+
+export default GroomProfile;

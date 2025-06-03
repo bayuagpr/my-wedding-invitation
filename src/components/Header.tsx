@@ -1,13 +1,11 @@
 import BlurText from "@/components/ui/BlurText/BlurText"
-import { useScroll, useTransform, motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useTransform, motion } from 'framer-motion'
+import { useRef, memo } from 'react'
+import { useTargetScroll } from "@/hooks/useScrollContext";
 
-export default function Header() {
+const Header = memo(function Header() {
   const container = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end start']
-  })
+  const { scrollYProgress } = useTargetScroll(container);
 
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"])
 
@@ -47,4 +45,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+});
+
+export default Header;

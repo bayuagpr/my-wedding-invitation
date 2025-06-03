@@ -1,0 +1,106 @@
+/* Performance optimizations for animations */
+
+/* Hardware acceleration for animated elements */
+.motion-element {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize blur text animations */
+.blur-text span {
+  will-change: transform, filter, opacity;
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .motion-element,
+  .blur-text span,
+  [data-framer-motion] {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce complex transforms on mobile */
+  .motion-element {
+    will-change: transform, opacity;
+  }
+  
+  /* Simplify blur effects on mobile */
+  .blur-text span {
+    will-change: opacity;
+  }
+  
+  /* Optimize scroll velocity on mobile */
+  .scroll-velocity {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Fallback animation for low-performance devices */
+@keyframes simple-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: simple-scroll 20s linear infinite;
+}
+
+/* Optimize background images */
+.bg-optimized {
+  background-attachment: scroll; /* Avoid fixed on mobile */
+  background-size: cover;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+/* Intersection observer optimization */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GPU layer promotion for smooth scrolling */
+.scroll-container {
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+/* Optimize text rendering */
+.optimized-text {
+  text-rendering: optimizeSpeed;
+  font-smooth: never;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* Reduce layout thrashing */
+.no-layout-shift {
+  contain: layout style paint;
+}
+
+/* Memory optimization for large lists */
+.virtual-scroll {
+  contain: strict;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}

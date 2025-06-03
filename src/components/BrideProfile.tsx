@@ -1,14 +1,14 @@
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useTransform, motion } from "framer-motion";
+import { useRef, memo } from "react";
+import { useTargetScroll } from "@/hooks/useScrollContext";
+import { useParallaxDistance } from "@/hooks/useWindowDimensions";
 
-export default function BrideProfile() {
-    const container = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end start']
-  })
+const BrideProfile = memo(function BrideProfile() {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useTargetScroll(container);
+  const parallaxDistance = useParallaxDistance();
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0px", window.innerWidth < 768 ? "300px" : "700px"])
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", parallaxDistance]);
   return (
     <div ref={container}>
       <motion.div
@@ -45,4 +45,6 @@ export default function BrideProfile() {
       ></div>
     </div>
   );
-}
+});
+
+export default BrideProfile;
