@@ -6,6 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { submitRSVP } from "@/lib/api";
+import { refreshWishes } from "@/components/Wishes";
 
 type Attendance = "attending" | "unable";
 
@@ -45,6 +46,9 @@ export default function RSVP() {
       });
 
       setSubmitted(true);
+
+      // Refresh wishes to show the new submission
+      refreshWishes();
 
       // Reset form after successful submission
       setTimeout(() => {

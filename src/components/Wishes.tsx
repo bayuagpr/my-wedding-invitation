@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { getWishes } from "@/lib/api";
 
@@ -9,6 +9,9 @@ type Wish = {
   message: string;
   created_at: string;
 };
+
+// Global refresh function that can be called from other components
+let globalWishesRefresh: (() => void) | null = null;
 
 export default function Wishes() {
   const [wishes, setWishes] = useState<Wish[]>([]);
@@ -29,25 +32,34 @@ export default function Wishes() {
   const pauseTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Fetch wishes from Supabase
-  useEffect(() => {
-    async function fetchWishes() {
-      try {
-        setIsLoading(true);
-        setError(null);
-        const data = await getWishes();
-        setWishes(data || []);
-        // Reset current index to 0 when wishes are loaded
-        setCurrentWishIndex(0);
-      } catch (err) {
-        console.error('Error fetching wishes:', err);
-        setError('Failed to load wishes');
-      } finally {
-        setIsLoading(false);
-      }
+  const fetchWishes = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const data = await getWishes();
+      setWishes(data || []);
+      // Reset current index to 0 when wishes are loaded
+      setCurrentWishIndex(0);
+    } catch (err) {
+      console.error('Error fetching wishes:', err);
+      setError('Failed to load wishes');
+    } finally {
+      setIsLoading(false);
     }
-
-    fetchWishes();
   }, []);
+
+  // Initial fetch on mount
+  useEffect(() => {
+    fetchWishes();
+  }, [fetchWishes]);
+
+  // Set up global refresh function
+  useEffect(() => {
+    globalWishesRefresh = fetchWishes;
+    return () => {
+      globalWishesRefresh = null;
+    };
+  }, [fetchWishes]);
 
   // Clear all timers
   const clearTimers = () => {
@@ -357,6 +369,8 @@ export default function Wishes() {
   );
 }
 
+
+
 function ChevronLeftIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -371,4 +385,11 @@ function ChevronRightIcon() {
       <path d="m9 18 6-6-6-6"/>
     </svg>
   );
+}
+
+// Export function to refresh wishes from other components
+export function refreshWishes() {
+  if (globalWishesRefresh) {
+    globalWishesRefresh();
+  }
 }
