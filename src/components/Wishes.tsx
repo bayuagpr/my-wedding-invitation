@@ -325,30 +325,45 @@ export default function Wishes() {
                 <p className="text-sm text-primary/60">{formatDate(currentWish.created_at)}</p>
               </div>
 
-              {/* Progress indicator dots */}
-              <div className="flex justify-center space-x-2 mt-6">
-                {wishes.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      if (index !== currentWishIndex && !isTransitioning) {
-                        pauseAutoPlayTemporarily();
-                        setIsTransitioning(true);
-                        setTimeout(() => {
-                          setCurrentWishIndex(index);
-                          setIsTransitioning(false);
-                        }, 150);
-                      }
-                    }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentWishIndex
-                        ? 'bg-primary scale-125'
-                        : 'bg-primary/30 hover:bg-primary/50'
-                    }`}
-                    disabled={isTransitioning}
-                  />
-                ))}
-              </div>
+              {/* Smart navigation indicator */}
+              {wishes.length <= 7 ? (
+                // Show dots for smaller numbers
+                <div className="flex justify-center space-x-2 mt-6">
+                  {wishes.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        if (index !== currentWishIndex && !isTransitioning) {
+                          pauseAutoPlayTemporarily();
+                          setIsTransitioning(true);
+                          setTimeout(() => {
+                            setCurrentWishIndex(index);
+                            setIsTransitioning(false);
+                          }, 150);
+                        }
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentWishIndex
+                          ? 'bg-primary scale-125'
+                          : 'bg-primary/30 hover:bg-primary/50'
+                      }`}
+                      disabled={isTransitioning}
+                    />
+                  ))}
+                </div>
+              ) : (
+                // Show progress bar for larger numbers
+                <div className="flex justify-center mt-6">
+                  <div className="w-24 h-1 bg-primary/20 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-primary transition-all duration-300 ease-out"
+                      style={{
+                        width: `${((currentWishIndex + 1) / wishes.length) * 100}%`
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Next button */}
