@@ -1,6 +1,6 @@
 "use client";
 
-import {ReactLenis} from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import { useState } from "react";
 import Welcome from "@/components/Welcome";
 import Navigation from "@/components/Navigation";
@@ -38,12 +38,8 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
 
       {isInvitationOpen && <main>
         <Header />
-        <ScrollAnimation delay={0.2}>
-          <QuranVerse />
-        </ScrollAnimation>
-        <ScrollAnimation delay={0.3}>
-          <CoupleProfile />
-        </ScrollAnimation>
+        <QuranVerse />
+        <CoupleProfile />
         <ScrollAnimation delay={0.4}>
           <EventDetails />
         </ScrollAnimation>
@@ -52,16 +48,12 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
         </ScrollAnimation>
         <ScrollAnimation delay={0.6}>
           <RSVP />
-        </ScrollAnimation>
-        <ScrollAnimation delay={0.6}>
           <Wishes />
         </ScrollAnimation>
         <ScrollAnimation delay={0.7}>
           <WeddingGift />
         </ScrollAnimation>
-        <ScrollAnimation delay={0.8}>
-          <Gallery />
-        </ScrollAnimation>
+        <Gallery />
       </main>}
 
       {isInvitationOpen && <Footer />}

@@ -42,7 +42,7 @@ export default function Welcome({ guestName, onOpenInvitation }: WelcomeProps) {
           <div className="bg-background p-8 flex flex-col justify-center items-center text-center rounded-lg md:rounded-l-none">
             <div
               className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10 md:hidden"
-              style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856443/OSM-48_hejhs5.jpg)`, filter: 'brightness(0.5)' }}
+              style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856443/OSM-48_hejhs5.jpg)`, filter: 'brightness(0.9)' }}
             />
             <div className="my-8 animate-fade-in">
               <h2 className="text-sm uppercase tracking-[0.25em] text-primary/70 mb-4">THE WEDDING OF</h2>

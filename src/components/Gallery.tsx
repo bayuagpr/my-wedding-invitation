@@ -1,14 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { galleryImages } from "@/data/galleryImages";
+import { useImageCompression } from "@/lib/imageCompression";
 
 export default function Gallery() {
   const [openDialog, setOpenDialog] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [compressedThumbnails, setCompressedThumbnails] = useState<string[]>([]);
+  const [isCompressing, setIsCompressing] = useState(true);
+  const { compressImages } = useImageCompression();
+
+  // Compress thumbnails on component mount
+  useEffect(() => {
+    const compressThumbnails = async () => {
+      try {
+        setIsCompressing(true);
+        const thumbnailUrls = galleryImages.map(img => img.thumbnail);
+        const compressed = await compressImages(thumbnailUrls, {
+          maxWidth: 400,
+          maxHeight: 400,
+          quality: 0.7,
+          format: 'image/jpeg'
+        });
+        setCompressedThumbnails(compressed);
+      } catch (error) {
+        console.error('Failed to compress thumbnails:', error);
+        // Fallback to original thumbnails
+        setCompressedThumbnails(galleryImages.map(img => img.thumbnail));
+      } finally {
+        setIsCompressing(false);
+      }
+    };
+
+    compressThumbnails();
+  }, []); // Empty dependency array - only run once on mount
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -37,11 +66,18 @@ export default function Gallery() {
               className="aspect-square overflow-hidden rounded-lg cursor-pointer relative group"
               onClick={() => openLightbox(index)}
             >
-              <img
-                src={image.thumbnail}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
+              {isCompressing ? (
+                <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Loading...</span>
+                </div>
+              ) : (
+                <img
+                  src={compressedThumbnails[index] || image.thumbnail}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+              )}
               <div className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-primary-foreground text-sm">View</span>
               </div>
@@ -72,7 +108,7 @@ export default function Gallery() {
 
               <button
                 onClick={handlePrevious}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/60 rounded-full p-2 transition-colors"
                 aria-label="Previous image"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
@@ -82,7 +118,7 @@ export default function Gallery() {
 
               <button
                 onClick={handleNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/60 rounded-full p-2 transition-colors"
                 aria-label="Next image"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
