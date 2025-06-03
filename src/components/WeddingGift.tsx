@@ -31,10 +31,32 @@ export default function WeddingGift() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-primary/80 text-lg mb-12">
             Your presence is the greatest gift to us.<br />
-            If you'd like to give a little extra blessing, you may do so at our wishing well or through the details below.
+            If you'd like to give a little extra blessing, you may do so through the details below.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 text-left">
+            {/* Groom's Account */}
+            <div>
+              <h3 className="text-xl md:text-2xl text-primary mb-4 text-center">Bayu</h3>
+              <div className="bg-[#EAE5E7] p-6 rounded-lg shadow-lg">
+                <p className="text-primary mb-2">Bank Mandiri</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-xl text-primary">1330014055412</p>
+                  <button
+                    onClick={() => copyToClipboard('1330014055412', 'bayu')}
+                    className="ml-4 p-2 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                    title="Copy account number"
+                  >
+                    {copiedStates.bayu ? (
+                      <Check className="w-5 h-5 text-green-600" />
+                    ) : (
+                      <Copy className="w-5 h-5 text-primary" />
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+            
             {/* Bride's Account */}
             <div>
               <h3 className="text-xl md:text-2xl text-primary mb-4 text-center">Shahya</h3>
@@ -57,27 +79,7 @@ export default function WeddingGift() {
               </div>
             </div>
 
-            {/* Groom's Account */}
-            <div>
-              <h3 className="text-xl md:text-2xl text-primary mb-4 text-center">Bayu</h3>
-              <div className="bg-[#EAE5E7] p-6 rounded-lg shadow-lg">
-                <p className="text-primary mb-2">Bank Mandiri</p>
-                <div className="flex items-center justify-between">
-                  <p className="text-xl text-primary">1330014055412</p>
-                  <button
-                    onClick={() => copyToClipboard('1330014055412', 'bayu')}
-                    className="ml-4 p-2 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors duration-200 flex items-center justify-center"
-                    title="Copy account number"
-                  >
-                    {copiedStates.bayu ? (
-                      <Check className="w-5 h-5 text-green-600" />
-                    ) : (
-                      <Copy className="w-5 h-5 text-primary" />
-                    )}
-                  </button>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Physical Gift */}
