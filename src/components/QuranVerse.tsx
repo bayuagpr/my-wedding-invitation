@@ -1,5 +1,3 @@
-import weddingHero from "@/assets/OSM-51.jpg"
-
 export default function QuranVerse() {
   return (
     <section className="py-24 bg-background relative" id="verse">

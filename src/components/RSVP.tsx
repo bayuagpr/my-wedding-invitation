@@ -70,7 +70,7 @@ export default function RSVP() {
           Kindly Confirm Your Presence and Share Your Blessings
         </h2>
         <p className="text-center text-primary/70 max-w-2xl mx-auto mb-12">
-          We'd be honored by your presence and delighted to receive your kind wishes.
+          We'd be honored by your presence and delighted to receive your kind wishes.<br/>
           Please confirm your attendance below.
         </p>
 
@@ -87,7 +87,7 @@ export default function RSVP() {
                     <FormControl>
                       <Input
                         placeholder="Your name"
-                        className="bg-transparent border-primary/30 text-white"
+                        className="bg-transparent border-primary/30 text-white placeholder:text-white/70"
                         {...field}
                         required
                       />
@@ -100,10 +100,10 @@ export default function RSVP() {
               {/* Attendance Field */}
               <div>
                 <FormLabel className="text-primary block mb-2">Attendance</FormLabel>
-                <div className="flex gap-4">
+                <div className="flex flex-col gap-3">
                   <Button
                     type="button"
-                    className={`flex-1 ${
+                    className={`w-full ${
                       attendance === "attending"
                         ? "bg-primary text-primary-foreground"
                         : "bg-transparent border border-primary/30 text-primary hover:bg-primary/10"
@@ -114,7 +114,7 @@ export default function RSVP() {
                   </Button>
                   <Button
                     type="button"
-                    className={`flex-1 ${
+                    className={`w-full ${
                       attendance === "unable"
                         ? "bg-primary text-primary-foreground"
                         : "bg-transparent border border-primary/30 text-primary hover:bg-primary/10"
@@ -160,7 +160,7 @@ export default function RSVP() {
                     <FormControl>
                       <textarea
                         placeholder="Your wishes for the couple"
-                        className="w-full bg-transparent border border-primary/30 rounded-md p-2 text-white h-24"
+                        className="w-full bg-transparent border border-primary/30 rounded-md p-2 text-white placeholder:text-white/70 h-24"
                         {...field}
                       />
                     </FormControl>

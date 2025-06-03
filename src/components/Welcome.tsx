@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
-import weddingCoupleImage from "@/assets/OSM-48.jpg"
 
 interface WelcomeProps {
   guestName?: string;

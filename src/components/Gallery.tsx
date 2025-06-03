@@ -4,69 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
-
-const galleryImages = [
-  {
-    id: "img1",
-    thumbnail: "https://ext.same-assets.com/2165661133/4015499809.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/4015499809.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 1"
-  },
-  {
-    id: "img2",
-    thumbnail: "https://ext.same-assets.com/2165661133/2460535429.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/2460535429.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 2"
-  },
-  {
-    id: "img3",
-    thumbnail: "https://ext.same-assets.com/2165661133/1996505328.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/1996505328.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 3"
-  },
-  {
-    id: "img4",
-    thumbnail: "https://ext.same-assets.com/2165661133/1518935124.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/1518935124.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 4"
-  },
-  {
-    id: "img5",
-    thumbnail: "https://ext.same-assets.com/2165661133/1630300976.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/1630300976.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 5"
-  },
-  {
-    id: "img6",
-    thumbnail: "https://ext.same-assets.com/2165661133/2107412509.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/2107412509.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 6"
-  },
-  {
-    id: "img7",
-    thumbnail: "https://ext.same-assets.com/2165661133/2625518234.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/2625518234.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 7"
-  },
-  {
-    id: "img8",
-    thumbnail: "https://ext.same-assets.com/2165661133/1166855498.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/1166855498.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 8"
-  },
-  {
-    id: "img9",
-    thumbnail: "https://ext.same-assets.com/2165661133/795193195.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/795193195.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 9"
-  },
-  {
-    id: "img10",
-    thumbnail: "https://ext.same-assets.com/2165661133/2745305562.jpeg",
-    fullsize: "https://ext.same-assets.com/2165661133/2745305562.jpeg",
-    alt: "Shahya and Bayu Pre-wedding 10"
-  }
-];
+import { galleryImages } from "@/data/galleryImages";
 
 export default function Gallery() {
   const [openDialog, setOpenDialog] = useState(false);

@@ -1,4 +1,3 @@
-import weddingHero from "@/assets/OSM-11.jpg"
 import BlurText from "@/components/ui/BlurText/BlurText"
 import { useScroll, useTransform, motion } from 'framer-motion'
 import { useRef } from 'react'
