@@ -4,13 +4,13 @@ import ClientBody from "./ClientBody";
 
 export const metadata: Metadata = {
   title: "The Wedding of Bayu & Shahya",
-  description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+  description: "Coming soon: The wedding of Bayu & Shahya on Sunday, 27th July 2025",
   openGraph: {
     title: "The Wedding of Bayu & Shahya",
-    description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+    description: "You are invited to the wedding of Bayu & Shahya on Sunday, 27th July 2025",
     images: [
       {
-        url: "https://res.cloudinary.com/dizje8tlf/image/upload/v1748933786/bayu-shahya-og-img_dcwxce.png",
+        url: "https://res.cloudinary.com/dizje8tlf/image/upload/v1748935028/bayu-shahya-og-image-2_zajyfb.jpg",
         width: 1200,
         height: 630,
         alt: "Bayu & Shahya Wedding Invitation",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Wedding of Bayu & Shahya",
-    description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
-    images: ["https://res.cloudinary.com/dizje8tlf/image/upload/v1748933786/bayu-shahya-og-img_dcwxce.png"],
+    description: "You are invited to the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+    images: ["https://res.cloudinary.com/dizje8tlf/image/upload/v1748935028/bayu-shahya-og-image-2_zajyfb.jpg"],
   },
 };
 
