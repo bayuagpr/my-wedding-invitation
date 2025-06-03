@@ -3,8 +3,28 @@ import "./globals.css";
 import ClientBody from "./ClientBody";
 
 export const metadata: Metadata = {
-  title: "The Wedding of Shahya & Bayu",
-  description: "Join us to celebrate the wedding of Shahya & Bayu on Sunday, 27th July 2025",
+  title: "The Wedding of Bayu & Shahya",
+  description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+  openGraph: {
+    title: "The Wedding of Bayu & Shahya",
+    description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dizje8tlf/image/upload/v1748928191/Screenshot_2025-06-03_132034_bn8dp3.jpg",
+        width: 1906,
+        height: 798,
+        alt: "Bayu & Shahya Wedding Invitation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Wedding of Bayu & Shahya",
+    description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
+    images: ["https://res.cloudinary.com/dizje8tlf/image/upload/v1748928191/Screenshot_2025-06-03_132034_bn8dp3.jpg"],
+  },
 };
 
 export default function RootLayout({
