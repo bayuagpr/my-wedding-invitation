@@ -1,6 +1,10 @@
 export default function EventDetails() {
   return (
-    <section className="py-20 bg-background" id="event">
+    <section className="py-20 bg-background relative" id="event">
+      <div
+        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
+        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923782/OSM-14_bztwez.jpg)`, filter: 'brightness(0.9)' }}
+      />
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-12">
           Event Details

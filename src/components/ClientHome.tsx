@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { ScrollProvider } from "@/hooks/useScrollContext";
 import { useWindowDimensions } from "@/hooks/useWindowDimensions";
 import Welcome from "@/components/Welcome";
@@ -27,22 +27,19 @@ interface ClientHomeProps {
 export default function ClientHome({ searchParams }: ClientHomeProps) {
   const guestName = searchParams.guest ? decodeURIComponent(searchParams.guest) : 'Guest';
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
-  const { isMobile } = useWindowDimensions();
 
   // Optimize Lenis settings based on device
-  const lenisOptions = useMemo(() => ({
-    duration: isMobile ? 0.6 : 1.2,  // Faster mobile response
-    easing: isMobile
-      ? (t: number) => t  // Linear easing for mobile (less CPU intensive)
-      : (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  const lenisOptions = {
+    duration: 0.6,  // Faster mobile response
+    easing: (t: number) => t ,
     direction: 'vertical' as const,
     gestureDirection: 'vertical' as const,
     smooth: true,
-    mouseMultiplier: isMobile ? 0.3 : 1,  // Further reduce mobile sensitivity
+    mouseMultiplier: 0.3,  // Further reduce mobile sensitivity
     smoothTouch: false,  // Keep disabled for mobile performance
-    touchMultiplier: isMobile ? 0.8 : 1.5,  // Reduce mobile touch sensitivity
+    touchMultiplier: 0.8,  // Reduce mobile touch sensitivity
     infinite: false,
-  }), [isMobile]);
+  };
 
   return (
     <>

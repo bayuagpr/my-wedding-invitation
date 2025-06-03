@@ -75,7 +75,11 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-background" id="gallery">
+    <section className="py-20 bg-background relative" id="gallery">
+      <div
+        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
+        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923787/OSM-12_zuwlly.jpg)`, filter: 'brightness(0.9)' }}
+      />
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-8">
           OUR PRE-WEDDING<br />CELEBRATION
