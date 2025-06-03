@@ -2,42 +2,18 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { getWishes } from "@/lib/api";
 
 type Wish = {
   name: string;
   message: string;
-  date: string;
+  created_at: string;
 };
 
-const wishes: Wish[] = [
-  {
-    name: "zada",
-    message: "AAAAK congrats aunty & oom! zada so happy for u both, semoga selalu diberikan kesehatan kebahagiaan kelancaran dalam setiap langkahnya bersama selamanya aamiin!! love, zada",
-    date: "11 Apr 2025"
-  },
-  {
-    name: "Nuel",
-    message: "Semoga lancarr yaa Tuhan berkati kaliaann",
-    date: "11 Apr 2025"
-  },
-  {
-    name: "agna",
-    message: "AAAAAAAA selamat kak jo dan kak ayu! Lucu banget foto-fotonya, lancar-lancar sampai hari H ya<3",
-    date: "11 Apr 2025"
-  },
-  {
-    name: "Zulfikar & mantan",
-    message: "ga sabar! Semoga menjadi keluarga bahagia! Lancar cuy",
-    date: "11 Apr 2025"
-  },
-  {
-    name: "Ken Wisnu dan Arunarwi",
-    message: "Semoga bisa menjadi pasangan yg harmonis, rukun, tentram dan damai di dalam Tuhan",
-    date: "11 Apr 2025"
-  }
-];
-
 export default function Wishes() {
+  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentWishIndex, setCurrentWishIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [expandedMessages, setExpandedMessages] = useState<{[key: number]: boolean}>({});
@@ -51,6 +27,27 @@ export default function Wishes() {
   // Refs for timer management
   const autoPlayTimer = useRef<NodeJS.Timeout | null>(null);
   const pauseTimer = useRef<NodeJS.Timeout | null>(null);
+
+  // Fetch wishes from Supabase
+  useEffect(() => {
+    async function fetchWishes() {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const data = await getWishes();
+        setWishes(data || []);
+        // Reset current index to 0 when wishes are loaded
+        setCurrentWishIndex(0);
+      } catch (err) {
+        console.error('Error fetching wishes:', err);
+        setError('Failed to load wishes');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchWishes();
+  }, []);
 
   // Clear all timers
   const clearTimers = () => {
@@ -66,7 +63,7 @@ export default function Wishes() {
 
   // Start auto-play
   const startAutoPlay = () => {
-    if (!isAutoPlaying || isPaused || isTransitioning) return;
+    if (!isAutoPlaying || isPaused || isTransitioning || wishes.length === 0) return;
 
     clearTimers();
     autoPlayTimer.current = setInterval(() => {
@@ -96,6 +93,7 @@ export default function Wishes() {
   };
 
   const nextWish = () => {
+    if (wishes.length === 0) return;
     pauseAutoPlayTemporarily();
     setIsTransitioning(true);
     setTimeout(() => {
@@ -105,6 +103,7 @@ export default function Wishes() {
   };
 
   const prevWish = () => {
+    if (wishes.length === 0) return;
     pauseAutoPlayTemporarily();
     setIsTransitioning(true);
     setTimeout(() => {
@@ -126,6 +125,16 @@ export default function Wishes() {
     return message.substring(0, limit).trim() + "...";
   };
 
+  // Format date from ISO string to readable format
+  const formatDate = (isoString: string) => {
+    const date = new Date(isoString);
+    return date.toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    });
+  };
+
   // Handle mouse events for auto-play control
   const handleMouseEnter = () => {
     stopAutoPlay();
@@ -139,7 +148,7 @@ export default function Wishes() {
 
   // Auto-play effect
   useEffect(() => {
-    if (isAutoPlaying && !isPaused && !isTransitioning) {
+    if (isAutoPlaying && !isPaused && !isTransitioning && wishes.length > 0) {
       startAutoPlay();
     } else {
       stopAutoPlay();
@@ -149,19 +158,105 @@ export default function Wishes() {
     return () => {
       clearTimers();
     };
-  }, [isAutoPlaying, isPaused, isTransitioning]);
+  }, [isAutoPlaying, isPaused, isTransitioning, wishes.length]);
 
   // Restart auto-play when pause state changes
   useEffect(() => {
-    if (!isPaused && isAutoPlaying && !isTransitioning) {
+    if (!isPaused && isAutoPlaying && !isTransitioning && wishes.length > 0) {
       startAutoPlay();
     }
-  }, [isPaused]);
+  }, [isPaused, wishes.length]);
+
+  // Reset currentWishIndex if it's out of bounds
+  useEffect(() => {
+    if (wishes.length > 0 && currentWishIndex >= wishes.length) {
+      setCurrentWishIndex(0);
+    }
+  }, [wishes.length, currentWishIndex]);
+
+  // Handle loading and empty states
+  if (isLoading) {
+    return (
+      <section className="pb-20 bg-background" id="wishes">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
+            Wishes
+          </h2>
+          <div className="max-w-2xl mx-auto p-8 bg-card rounded-lg shadow-md">
+            <div className="flex-1 min-h-[200px] flex flex-col justify-center">
+              <div className="text-center">
+                <p className="text-primary/60">Loading wishes...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="pb-20 bg-background" id="wishes">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
+            Wishes
+          </h2>
+          <div className="max-w-2xl mx-auto p-8 bg-card rounded-lg shadow-md">
+            <div className="flex-1 min-h-[200px] flex flex-col justify-center">
+              <div className="text-center">
+                <p className="text-red-400">{error}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (wishes.length === 0) {
+    return (
+      <section className="pb-20 bg-background" id="wishes">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
+            Wishes
+          </h2>
+          <div className="max-w-2xl mx-auto p-8 bg-card rounded-lg shadow-md">
+            <div className="flex-1 min-h-[200px] flex flex-col justify-center">
+              <div className="text-center">
+                <p className="text-primary/60">No wishes yet. Be the first to share your blessings!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const currentWish = wishes[currentWishIndex];
+
+  // Safety check - if no current wish, this shouldn't happen but let's be safe
+  if (!currentWish) {
+    return (
+      <section className="pb-20 bg-background" id="wishes">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
+            Wishes
+          </h2>
+          <div className="max-w-2xl mx-auto p-8 bg-card rounded-lg shadow-md">
+            <div className="flex-1 min-h-[200px] flex flex-col justify-center">
+              <div className="text-center">
+                <p className="text-primary/60">No wishes available.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const isExpanded = expandedMessages[currentWishIndex];
   const needsTruncation = currentWish.message.length > MESSAGE_LIMIT;
-  const displayMessage = needsTruncation && !isExpanded 
+  const displayMessage = needsTruncation && !isExpanded
     ? truncateMessage(currentWish.message, MESSAGE_LIMIT)
     : currentWish.message;
 
@@ -215,7 +310,7 @@ export default function Wishes() {
                     </Button>
                   )}
                 </div>
-                <p className="text-sm text-primary/60">{currentWish.date}</p>
+                <p className="text-sm text-primary/60">{formatDate(currentWish.created_at)}</p>
               </div>
 
               {/* Progress indicator dots */}

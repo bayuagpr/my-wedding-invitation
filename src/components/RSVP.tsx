@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { submitRSVP } from "@/lib/api";
 
 type Attendance = "attending" | "unable";
 
@@ -19,6 +20,8 @@ export default function RSVP() {
   const [attendance, setAttendance] = useState<Attendance | null>(null);
   const [guestCount, setGuestCount] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<FormData>({
     defaultValues: {
@@ -28,18 +31,34 @@ export default function RSVP() {
     },
   });
 
-  function onSubmit(data: FormData) {
-    // In a real application, you would send this data to a backend or API
-    console.log(data);
-    setSubmitted(true);
+  async function onSubmit(data: FormData) {
+    setIsLoading(true);
+    setError(null);
 
-    // Reset form after submission
-    setTimeout(() => {
-      form.reset();
-      setAttendance(null);
-      setGuestCount(1);
-      setSubmitted(false);
-    }, 3000);
+    try {
+      // Submit to Supabase
+      await submitRSVP({
+        name: data.name,
+        attendance: data.attendance,
+        guest_count: data.guests,
+        message: data.wishes,
+      });
+
+      setSubmitted(true);
+
+      // Reset form after successful submission
+      setTimeout(() => {
+        form.reset();
+        setAttendance(null);
+        setGuestCount(1);
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      console.error('Error submitting RSVP:', err);
+      setError('Failed to submit RSVP. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   function handleAttendanceChange(value: Attendance) {
@@ -169,12 +188,24 @@ export default function RSVP() {
                 )}
               />
 
+              {/* Error Message */}
+              {error && (
+                <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-md">
+                  <p className="text-red-400 text-sm">{error}</p>
+                </div>
+              )}
+
               <Button
                 type="submit"
-                disabled={!attendance || submitted}
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                disabled={!attendance || submitted || isLoading}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
               >
-                {submitted ? "Thank you for your response!" : "Submit"}
+                {isLoading
+                  ? "Submitting..."
+                  : submitted
+                  ? "Thank you for your response!"
+                  : "Submit"
+                }
               </Button>
             </form>
           </Form>
