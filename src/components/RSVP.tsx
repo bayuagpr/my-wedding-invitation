@@ -89,7 +89,7 @@ export default function RSVP() {
   return (
     <section className="pt-20 pb-10 bg-background relative" id="rsvp">
       <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
+        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923783/OSM-15_pyp3gu.jpg)`, filter: 'brightness(0.9)' }}
       />
       <div className="container mx-auto px-4">

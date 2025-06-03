@@ -17,9 +17,9 @@ export default function Footer() {
         <div className="text-center mb-8">
           <h3 className="text-2xl text-primary">Bayu & Shahya</h3>
         </div>
-        <div className="text-center mb-24 rounded-lg p-4">
-          <h3 className="text-lg text-primary">made by bayu</h3>
-          <h3 className="text-md text-primary">(yes you're correct, the groom made this website 😅)</h3>
+        <div className="text-center mb-24 rounded-lg p-4 bg-background text-white">
+          <h3 className="text-lg">made by bayu</h3>
+          <h3 className="text-md">(yes you're correct, the groom made this website 😅)</h3>
         </div>
       </div>
     </footer>

@@ -75,15 +75,14 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-background relative" id="gallery">
-      <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10"
-        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923787/OSM-12_zuwlly.jpg)`, filter: 'brightness(0.9)' }}
-      />
+    <section className="py-20 bg-background" id="gallery">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-primary mb-8">
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
           OUR PRE-WEDDING<br />CELEBRATION
         </h2>
+        <p className="text-center text-primary/70 mb-8">
+          Click image for preview
+        </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
@@ -110,10 +109,6 @@ export default function Gallery() {
             </div>
           ))}
         </div>
-
-        <p className="text-center text-primary/70 mt-8">
-          Click image for preview
-        </p>
       </div>
 
       {/* Lightbox Dialog */}
