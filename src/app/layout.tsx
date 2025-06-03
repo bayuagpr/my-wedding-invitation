@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
     images: [
       {
-        url: "https://res.cloudinary.com/dizje8tlf/image/upload/v1748928191/Screenshot_2025-06-03_132034_bn8dp3.jpg",
-        width: 1906,
-        height: 798,
+        url: "https://res.cloudinary.com/dizje8tlf/image/upload/v1748933786/bayu-shahya-og-img_dcwxce.png",
+        width: 1200,
+        height: 630,
         alt: "Bayu & Shahya Wedding Invitation",
       },
     ],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Wedding of Bayu & Shahya",
     description: "Join us to celebrate the wedding of Bayu & Shahya on Sunday, 27th July 2025",
-    images: ["https://res.cloudinary.com/dizje8tlf/image/upload/v1748928191/Screenshot_2025-06-03_132034_bn8dp3.jpg"],
+    images: ["https://res.cloudinary.com/dizje8tlf/image/upload/v1748933786/bayu-shahya-og-img_dcwxce.png"],
   },
 };
 
