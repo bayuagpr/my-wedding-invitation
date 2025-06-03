@@ -12,23 +12,45 @@ export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [compressedThumbnails, setCompressedThumbnails] = useState<string[]>([]);
   const [isCompressing, setIsCompressing] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const { compressImages } = useImageCompression();
 
-  // Compress thumbnails on component mount
+  // Detect mobile device
   useEffect(() => {
-    const compressThumbnails = async () => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check on mount
+    checkIsMobile();
+
+    // Listen for window resize
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Handle thumbnail compression based on device type
+  useEffect(() => {
+    const handleThumbnails = async () => {
       try {
         setIsCompressing(true);
         const thumbnailUrls = galleryImages.map(img => img.thumbnail);
-        const compressed = await compressImages(thumbnailUrls, {
-          maxWidth: 400,
-          maxHeight: 400,
-          quality: 0.7,
-          format: 'image/jpeg'
-        });
-        setCompressedThumbnails(compressed);
+
+        if (isMobile) {
+          // Compress for mobile devices
+          const compressed = await compressImages(thumbnailUrls, {
+            maxWidth: 500,
+            maxHeight: 500,
+            quality: 0.85,
+            format: 'image/webp'
+          });
+          setCompressedThumbnails(compressed);
+        } else {
+          // Use original thumbnails for desktop
+          setCompressedThumbnails(thumbnailUrls);
+        }
       } catch (error) {
-        console.error('Failed to compress thumbnails:', error);
+        console.error('Failed to process thumbnails:', error);
         // Fallback to original thumbnails
         setCompressedThumbnails(galleryImages.map(img => img.thumbnail));
       } finally {
@@ -36,8 +58,8 @@ export default function Gallery() {
       }
     };
 
-    compressThumbnails();
-  }, []); // Empty dependency array - only run once on mount
+    handleThumbnails();
+  }, [isMobile, compressImages]); // Re-run when device type changes
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
