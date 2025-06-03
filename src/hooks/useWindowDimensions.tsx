@@ -68,8 +68,8 @@ export function useWindowDimensions(): WindowDimensions {
 // Hook for getting parallax distance based on device
 export function useParallaxDistance(): string {
   const { isMobile } = useWindowDimensions();
-  
+
   return useMemo(() => {
-    return isMobile ? "300px" : "700px";
+    return isMobile ? "100px" : "700px";
   }, [isMobile]);
 }

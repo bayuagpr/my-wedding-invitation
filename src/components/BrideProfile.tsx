@@ -1,20 +1,29 @@
-import { useTransform, motion } from "framer-motion";
+import { useTransform, motion, useInView } from "framer-motion";
 import { useRef, memo } from "react";
 import { useTargetScroll } from "@/hooks/useScrollContext";
-import { useParallaxDistance } from "@/hooks/useWindowDimensions";
+import { useParallaxDistance, useWindowDimensions } from "@/hooks/useWindowDimensions";
 
 const BrideProfile = memo(function BrideProfile() {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useTargetScroll(container);
   const parallaxDistance = useParallaxDistance();
+  const { isMobile } = useWindowDimensions();
 
+  // Mobile optimization: only animate when component is visible
+  const isInView = useInView(container, {
+    margin: isMobile ? "-50px" : "0px",
+    once: false
+  });
+
+  // Only apply parallax transform when in view (mobile) or always (desktop)
+  const shouldAnimate = isMobile ? isInView : true;
   const y = useTransform(scrollYProgress, [0, 1], ["0px", parallaxDistance]);
   return (
     <div ref={container}>
       <motion.div
         className="relative w-full h-[420px] md:h-[700px] overflow-hidden bg-no-repeat bg-[99%_30%] bg-[size:170%] md:bg-[size:150%]"
         style={{
-          y,
+          y: shouldAnimate ? y : 0,
           backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748900273/OSM-3-rev-2_sfuw2j.jpg)`,
         }}
       >

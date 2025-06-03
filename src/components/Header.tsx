@@ -1,12 +1,22 @@
 import BlurText from "@/components/ui/BlurText/BlurText"
-import { useTransform, motion } from 'framer-motion'
+import { useTransform, motion, useInView } from 'framer-motion'
 import { useRef, memo } from 'react'
 import { useTargetScroll } from "@/hooks/useScrollContext";
+import { useWindowDimensions } from "@/hooks/useWindowDimensions";
 
 const Header = memo(function Header() {
   const container = useRef<HTMLElement>(null)
   const { scrollYProgress } = useTargetScroll(container);
+  const { isMobile } = useWindowDimensions();
 
+  // Mobile optimization: only animate when component is visible
+  const isInView = useInView(container, {
+    margin: isMobile ? "-50px" : "0px",
+    once: false
+  });
+
+  // Only apply parallax transform when in view (mobile) or always (desktop)
+  const shouldAnimate = isMobile ? isInView : true;
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"])
 
   return (
@@ -14,7 +24,7 @@ const Header = memo(function Header() {
       <motion.div
         className="absolute inset-0 bg-cover bg-[55%_10%] md:bg-center"
         style={{
-          y,
+          y: shouldAnimate ? y : 0,
           backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856434/OSM-11_b8hidc.jpg)`,
           // filter: 'brightness(0.5)'
         }}

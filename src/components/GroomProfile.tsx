@@ -1,20 +1,29 @@
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform, useInView } from "framer-motion";
 import { useRef, memo } from "react";
 import { useTargetScroll } from "@/hooks/useScrollContext";
-import { useParallaxDistance } from "@/hooks/useWindowDimensions";
+import { useParallaxDistance, useWindowDimensions } from "@/hooks/useWindowDimensions";
 
 const GroomProfile = memo(function GroomProfile() {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useTargetScroll(container);
   const parallaxDistance = useParallaxDistance();
+  const { isMobile } = useWindowDimensions();
 
+  // Mobile optimization: only animate when component is visible
+  const isInView = useInView(container, {
+    margin: isMobile ? "-50px" : "0px",
+    once: false
+  });
+
+  // Only apply parallax transform when in view (mobile) or always (desktop)
+  const shouldAnimate = isMobile ? isInView : true;
   const y = useTransform(scrollYProgress, [0, 1], ["0px", parallaxDistance]);
   return (
     <div ref={container}>
       <motion.div
         className="relative w-full h-[420px] md:h-[700px] overflow-hidden bg-no-repeat bg-[1%_15%] bg-cover md:bg-[size:150%]"
         style={{
-          y,
+          y: shouldAnimate ? y : 0,
           backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856431/OSM-8_ucmzab.jpg)`,
         }}
       >

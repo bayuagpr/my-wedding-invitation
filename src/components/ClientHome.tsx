@@ -31,14 +31,16 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
 
   // Optimize Lenis settings based on device
   const lenisOptions = useMemo(() => ({
-    duration: isMobile ? 1.0 : 1.2,
-    easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    duration: isMobile ? 0.6 : 1.2,  // Faster mobile response
+    easing: isMobile
+      ? (t: number) => t  // Linear easing for mobile (less CPU intensive)
+      : (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     direction: 'vertical' as const,
     gestureDirection: 'vertical' as const,
     smooth: true,
-    mouseMultiplier: isMobile ? 0.5 : 1,
-    smoothTouch: isMobile ? false : true,
-    touchMultiplier: 1.5,
+    mouseMultiplier: isMobile ? 0.3 : 1,  // Further reduce mobile sensitivity
+    smoothTouch: false,  // Keep disabled for mobile performance
+    touchMultiplier: isMobile ? 0.8 : 1.5,  // Reduce mobile touch sensitivity
     infinite: false,
   }), [isMobile]);
 
