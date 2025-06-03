@@ -13,7 +13,7 @@ export default function Header() {
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"])
 
   return (
-    <header ref={container} className="relative h-screen flex justify-center items-start 2xl:items-center 2xl:justify-start bg-background overflow-hidden" id="home">
+    <header ref={container} className="relative h-screen flex justify-center items-start 2xl:items-center md:justify-start bg-background overflow-hidden" id="home">
       <motion.div
         className="absolute inset-0 bg-cover bg-[55%_10%] md:bg-center"
         style={{
@@ -23,7 +23,7 @@ export default function Header() {
         }}
       />
 
-      <div className="relative z-10 text-center 2xl:text-left 2xl:pl-40 2xl:mb-20 md:mt-10 mt-12">
+      <div className="relative z-10 text-center md:text-left 2xl:pl-40 md:pl-20 2xl:mb-20 md:mt-10 mt-12">
         <BlurText
           text="THE WEDDING OF"
           className="text-lg md:text-xl 2xl:text-2xl text-primary mb-4 uppercase tracking-widest"

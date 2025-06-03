@@ -54,7 +54,7 @@ export default function Countdown() {
 
         <div className="flex justify-center mt-10 space-x-4">
           <a
-            href="https://calendar.google.com/calendar/u/0?cid=NzA4NmYzMjU0M2YyYWUwYWZlOWI5ZTAyZmYwZDFkMTgwNDMzM2FkYjhjNjNjOTU5ZTUwNDM2MmZjZmI1Yjc3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+            href="https://calendar.google.com/calendar/u/0?cid=OWUzNGQ5NjhjNGI1M2NlYzFjMzc5NTFmNmYzZGJkMzBlMDUyMjNhNTUwYzVlMWEzZWQ1Nzk4NzVhZWNiNzg5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-transparent border border-primary text-primary px-4 py-2 rounded-none hover:bg-primary/10 transition-colors text-sm uppercase tracking-wider"
@@ -62,7 +62,7 @@ export default function Countdown() {
             add to google calendar
           </a>
           <a
-            href="https://calendar.google.com/calendar/ical/7086f32543f2ae0afe9b9e02ff0d1d1804333adb8c63c959e504362fcfb5b779%40group.calendar.google.com/public/basic.ics"
+            href="https://calendar.google.com/calendar/ical/9e34d968c4b53cec1c37951f6f3dbd30e05223a550c5e1a3ed579875aecb7891%40group.calendar.google.com/public/basic.ics"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-transparent border border-primary text-primary px-4 py-2 rounded-none hover:bg-primary/10 transition-colors text-sm uppercase tracking-wider"
@@ -81,7 +81,7 @@ function CountdownItem({ value, label }: { value: number; label: string }) {
       <div className="text-3xl md:text-5xl text-primary mb-2 font-light">
         {value < 10 ? `0${value}` : value}
       </div>
-      <div className="text-sm text-primary/70 uppercase tracking-wide">
+      <div className="text-sm text-primary/70 uppercase tracking-wide font-semibold">
         {label}
       </div>
     </div>

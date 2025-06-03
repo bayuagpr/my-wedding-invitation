@@ -53,6 +53,9 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
         <ScrollAnimation delay={0.6}>
           <RSVP />
         </ScrollAnimation>
+        <ScrollAnimation delay={0.6}>
+          <Wishes />
+        </ScrollAnimation>
         <ScrollAnimation delay={0.7}>
           <WeddingGift />
         </ScrollAnimation>
