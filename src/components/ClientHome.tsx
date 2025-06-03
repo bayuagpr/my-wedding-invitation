@@ -1,6 +1,5 @@
 "use client";
 
-import {ReactLenis} from "lenis/react";
 import { useState } from "react";
 import Welcome from "@/components/Welcome";
 import Navigation from "@/components/Navigation";
@@ -28,7 +27,6 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
 
   return (
     <>
-      <ReactLenis root />
       <Welcome
         guestName={guestName}
         onOpenInvitation={() => setIsInvitationOpen(true)}
