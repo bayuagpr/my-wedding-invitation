@@ -27,6 +27,7 @@ const Header = memo(function Header() {
           delay={100}
           animateBy="words"
           direction="top"
+          immediate
         />
         <BlurText
           text="Bayu & Shahya"
@@ -34,6 +35,7 @@ const Header = memo(function Header() {
           delay={150}
           animateBy="words"
           direction="top"
+          immediate
         />
         <BlurText
           text="Sunday, 27th July 2025"
@@ -41,6 +43,7 @@ const Header = memo(function Header() {
           delay={200}
           animateBy="words"
           direction="top"
+          immediate
         />
       </div>
     </header>
