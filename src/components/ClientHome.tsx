@@ -31,7 +31,7 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
   // Optimize Lenis settings based on device
   const lenisOptions = {
     duration: 0.6,  // Faster mobile response
-    easing: (t: number) => t ,
+    easing: (t: number) => t,
     direction: 'vertical' as const,
     gestureDirection: 'vertical' as const,
     smooth: true,
@@ -63,7 +63,7 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
             <Countdown />
           </ScrollAnimation>
           <ScrollAnimation delay={0.6}>
-            <RSVP />
+            <RSVP guestName={guestName} />
             <Wishes />
           </ScrollAnimation>
           <ScrollAnimation delay={0.7}>
@@ -73,6 +73,10 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
         </main>}
 
         {isInvitationOpen && <Footer />}
+        {isInvitationOpen && <div className="text-center mb-24 rounded-lg p-4 bg-background text-white">
+          <h3 className="text-lg">made by bayu</h3>
+          <h3 className="text-md">(yes you're correct, the groom made this website 😅)</h3>
+        </div>}
       </ScrollProvider>
     </>
   );

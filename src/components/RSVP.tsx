@@ -17,7 +17,7 @@ type FormData = {
   wishes: string;
 };
 
-export default function RSVP() {
+export default function RSVP({ guestName }: { guestName: string }) {
   const [attendance, setAttendance] = useState<Attendance | null>(null);
   const [guestCount, setGuestCount] = useState(1);
   const [submitted, setSubmitted] = useState(false);
@@ -26,7 +26,7 @@ export default function RSVP() {
 
   const form = useForm<FormData>({
     defaultValues: {
-      name: "",
+      name: guestName === 'Guest' ? '' : guestName,
       guests: 1,
       wishes: "",
     },
@@ -89,7 +89,7 @@ export default function RSVP() {
   return (
     <section className="pt-20 pb-10 bg-background relative" id="rsvp">
       <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10 pointer-events-none"
+        className="absolute inset-0 bg-[50%_25%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923783/OSM-15_pyp3gu.jpg)`, filter: 'brightness(0.9)' }}
       />
       <div className="container mx-auto px-4">

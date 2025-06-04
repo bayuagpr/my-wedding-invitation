@@ -275,7 +275,7 @@ export default function Wishes() {
   return (
     <section className="pb-20 pt-10 bg-background relative" id="wishes">
       <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10 pointer-events-none"
+        className="absolute inset-0 bg-[50%_39%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923784/OSM-54_vqm82l.jpg)`, filter: 'brightness(0.9)' }}
       />
       <div className="container mx-auto px-4">

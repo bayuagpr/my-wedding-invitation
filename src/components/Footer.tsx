@@ -2,8 +2,8 @@ export default function Footer() {
   return (
     <footer className="py-10 bg-[#EAE5E7] relative">
       <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-20"
-        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923777/OSM_sycld0.jpg)`, filter: 'brightness(0.9)' }}
+        className="absolute inset-0 bg-[50%_35%] bg-[size:150%] md:bg-cover opacity-30"
+        style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923786/OSM-36_yjbls6.jpg)`, filter: 'brightness(0.5)' }}
       />
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
@@ -17,10 +17,7 @@ export default function Footer() {
         <div className="text-center mb-8">
           <h3 className="text-2xl text-primary">Bayu & Shahya</h3>
         </div>
-        <div className="text-center mb-24 rounded-lg p-4 bg-background text-white">
-          <h3 className="text-lg">made by bayu</h3>
-          <h3 className="text-md">(yes you're correct, the groom made this website 😅)</h3>
-        </div>
+        
       </div>
     </footer>
   );

@@ -41,7 +41,7 @@ export default function Countdown() {
   return (
     <section className="py-16 bg-[#EAE5E7] relative" id="countdown">
       <div
-        className="absolute inset-0 bg-[50%_40%] bg-cover opacity-10 pointer-events-none"
+        className="absolute inset-0 bg-[60%_40%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923790/OSM-66_v3wvi4.jpg)`, filter: 'brightness(0.9)' }}
       />
       <div className="container mx-auto px-4">
