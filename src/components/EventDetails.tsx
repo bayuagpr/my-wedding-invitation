@@ -39,14 +39,14 @@ export default function EventDetails() {
               <div className="bg-card p-6 rounded-lg text-center shadow-md">
                 <h4 className="text-lg font-semibold text-primary mb-2">Akad Nikah</h4>
                 <p className="text-primary mb-1">Sunday, 27th July 2025</p>
-                <p className="text-primary">08:00 WIB</p>
+                <p className="text-primary">09:00 WIB</p>
               </div>
 
               {/* Reception */}
               <div className="bg-card p-6 rounded-lg text-center shadow-md">
                 <h4 className="text-lg font-semibold text-primary mb-2">Reception</h4>
                 <p className="text-primary mb-1">Sunday, 27th July 2025</p>
-                <p className="text-primary">11:00 - 14:00 WIB</p>
+                <p className="text-primary">10:00 WIB - Selesai</p>
               </div>
             </div>
           </div>
