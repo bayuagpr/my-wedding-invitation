@@ -94,11 +94,11 @@ export default function RSVP({ guestName }: { guestName: string }) {
       />
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
-          Kindly Confirm Your Presence and Share Your Blessings
+          Your Presence Means the World to Us
         </h2>
         <p className="text-center text-primary/70 max-w-2xl mx-auto mb-12">
-          We'd be honored by your presence and delighted to receive your kind wishes.<br/>
-          Please confirm your attendance below.
+          We’d be truly grateful for your presence and heartfelt wishes.<br/>
+          Kindly let us know if you’ll be joining our celebration below.
         </p>
 
         <div className="max-w-xl mx-auto bg-card p-8 rounded-lg shadow-md">

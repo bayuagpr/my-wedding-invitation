@@ -7,10 +7,10 @@ export default function Footer() {
       />
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl text-primary mb-4">Forever Grateful</h2>
+          <h2 className="text-2xl md:text-3xl text-primary mb-4">From the Bottom of Our Hearts</h2>
           <p className="text-primary/70 max-w-xl mx-auto">
-            Your love and presence have made our day even more special.<br />
-            We are deeply grateful for your presence, love, and support as we begin this new chapter together.
+            Our wedding is not just a celebration of love, but a gathering of the people who matter most.<br />
+            Your presence would make our celebration even more complete.
           </p>
         </div>
 

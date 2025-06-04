@@ -46,7 +46,7 @@ export default function Countdown() {
       />
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
-          COUNTING DOWN TO<br />OUR SPECIAL MOMENT
+          GETTING CLOSER TO<br />OUR SPECIAL DAY
         </h2>
 
         <div className="grid grid-cols-4 gap-2 md:gap-6 max-w-3xl mx-auto">

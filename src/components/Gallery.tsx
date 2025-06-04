@@ -78,7 +78,7 @@ export default function Gallery() {
     <section className="py-20 bg-background" id="gallery">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
-          OUR PRE-WEDDING<br />CELEBRATION
+          MOMENTS BEFORE<br />'I DO'
         </h2>
         <p className="text-center text-primary/70 mb-8">
           Click image for preview

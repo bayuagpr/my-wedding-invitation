@@ -34,8 +34,8 @@ export default function WeddingGift() {
 
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-primary/80 text-lg mb-12">
-            Your presence is the greatest gift to us.<br />
-            If you'd like to give a little extra blessing, you may do so through the details below.
+            Having you celebrate with us is the greatest gift.<br />
+            For those wishing to give a little more, kindly see the details below.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 text-left">
