@@ -5,7 +5,7 @@ export default function Footer() {
         className="absolute inset-0 bg-[50%_35%] bg-[size:150%] md:bg-cover opacity-30"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923786/OSM-36_yjbls6.jpg)`, filter: 'brightness(0.5)' }}
       />
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl text-primary mb-4">From the Bottom of Our Hearts</h2>
           <p className="text-primary/70 max-w-xl mx-auto">

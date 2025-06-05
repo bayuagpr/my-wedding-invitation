@@ -44,7 +44,7 @@ export default function Countdown() {
         className="absolute inset-0 bg-[60%_40%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923790/OSM-66_v3wvi4.jpg)`, filter: 'brightness(0.9)' }}
       />
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
           GETTING CLOSER TO<br />OUR SPECIAL DAY
         </h2>

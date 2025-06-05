@@ -45,8 +45,6 @@ const ScrollAnimation = memo(function ScrollAnimation({
       initial: {
         opacity: 0,
         y: 100,
-        scale: 0.95,
-        rotateX: -10
       },
       animate: isInView ? {
         opacity: 1,
@@ -56,8 +54,6 @@ const ScrollAnimation = memo(function ScrollAnimation({
       } : {
         opacity: 0,
         y: 100,
-        scale: 0.95,
-        rotateX: -10
       },
       transition: {
         duration: 0.8,

@@ -6,7 +6,7 @@ export default function QuranVerse() {
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748856445/OSM-51_jdgbz8.jpg)`, filter: 'brightness(0.9)' }}
       />
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="mx-auto px-4 relative z-10 text-center">
         <p className="text-xl md:text-3xl text-primary max-w-3xl mx-auto leading-relaxed italic">
           "وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
         </p>

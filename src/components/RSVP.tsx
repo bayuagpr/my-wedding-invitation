@@ -92,7 +92,7 @@ export default function RSVP({ guestName }: { guestName: string }) {
         className="absolute inset-0 bg-[50%_25%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923783/OSM-15_pyp3gu.jpg)`, filter: 'brightness(0.9)' }}
       />
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-10">
           Your Presence Means the World to Us
         </h2>

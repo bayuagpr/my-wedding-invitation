@@ -190,7 +190,7 @@ export default function Wishes() {
   if (isLoading) {
     return (
       <section className="pb-20 bg-background" id="wishes">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
             Wishes
           </h2>
@@ -209,7 +209,7 @@ export default function Wishes() {
   if (error) {
     return (
       <section className="pb-20 bg-background" id="wishes">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
             Wishes
           </h2>
@@ -228,7 +228,7 @@ export default function Wishes() {
   if (wishes.length === 0) {
     return (
       <section className="pb-20 bg-background" id="wishes">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
             Wishes
           </h2>
@@ -250,7 +250,7 @@ export default function Wishes() {
   if (!currentWish) {
     return (
       <section className="pb-20 bg-background" id="wishes">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
             Wishes
           </h2>
@@ -278,7 +278,7 @@ export default function Wishes() {
         className="absolute inset-0 bg-[50%_39%] bg-cover opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1748923784/OSM-54_vqm82l.jpg)`, filter: 'brightness(0.9)' }}
       />
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
           Wishes
         </h2>

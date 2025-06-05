@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import QuranVerse from "@/components/QuranVerse";
 import CoupleProfile from "@/components/CoupleProfile";
 import EventDetails from "@/components/EventDetails";
+import Video from "@/components/Video";
 import Countdown from "@/components/Countdown";
 import RSVP from "@/components/RSVP";
 import Wishes from "@/components/Wishes";
@@ -59,6 +60,12 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
           <ScrollAnimation delay={0.4}>
             <EventDetails />
           </ScrollAnimation>
+          <div
+            className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_30%]"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1749111531/OSM-43-bw_fymlha.jpg)`,
+            }}
+          ></div>
           <ScrollAnimation delay={0.5}>
             <Countdown />
           </ScrollAnimation>
@@ -66,6 +73,12 @@ export default function ClientHome({ searchParams }: ClientHomeProps) {
             <RSVP guestName={guestName} />
             <Wishes />
           </ScrollAnimation>
+          <div
+            className="relative w-full h-96 md:h-[700px] overflow-hidden bg-cover bg-no-repeat bg-[50%_60%]"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/dizje8tlf/image/upload/v1749111529/OSM-70-bw_hfdixg.jpg)`,
+            }}
+          ></div>
           <ScrollAnimation delay={0.7}>
             <WeddingGift />
           </ScrollAnimation>

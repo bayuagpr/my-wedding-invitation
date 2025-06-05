@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { galleryImages } from "@/data/galleryImages";
 import { useImageCompression } from "@/lib/imageCompression";
+import Video from "./Video";
 
 export default function Gallery() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -75,16 +76,18 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-background" id="gallery">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl text-center text-primary mb-4">
+    <section className="pb-20 pt-8 bg-background" id="gallery">
+      <div>
+        <h2 className="text-2xl md:text-3xl text-center text-primary mb-8">
           MOMENTS BEFORE<br />'I DO'
         </h2>
-        <p className="text-center text-primary/70 mb-8">
+        <Video />
+
+        <p className="text-center text-primary/70 mt-8 mb-8">
           Click image for preview
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
