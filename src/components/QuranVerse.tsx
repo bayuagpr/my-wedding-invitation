@@ -10,7 +10,7 @@ export default function QuranVerse() {
         <p className="text-xl md:text-3xl text-primary max-w-3xl mx-auto leading-relaxed italic">
           "وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
         </p>
-        <p className="text-lg md:text-xl text-primary/70 mt-6">
+        <p className="text-lg md:text-xl text-primary/70 mt-6 max-w-3xl mx-auto">
           And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy. Surely in this are signs for people who reflect.
         </p>
         <p className="text-lg md:text-xl text-primary/70 mt-2">
