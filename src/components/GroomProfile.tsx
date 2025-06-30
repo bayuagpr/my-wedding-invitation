@@ -37,12 +37,12 @@ const GroomProfile = memo(function GroomProfile() {
           <p className="text-md md:text-lg lg:text-xl md:mb-2">Son of</p>
           <p className="text-md md:text-lg lg:text-xl mb-4 md:mb-6">Bapak Joko Subagyo & Ibu Canti Suhesti (Almh)</p>
           <a
-            href="https://www.instagram.com/bayu.ag"
+            href="https://www.instagram.com/bayuagpr"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-primary/80 hover:text-primary transition-colors text-sm md:text-lg"
           >
-            @bayu.ag
+            @bayuagpr
           </a>
         </div>
       </motion.div>
