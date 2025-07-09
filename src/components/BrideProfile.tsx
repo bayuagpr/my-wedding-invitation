@@ -36,14 +36,14 @@ const BrideProfile = memo(function BrideProfile() {
           <h2 className="text-lg md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 w-[250px] md:w-full">Putri Shahya Maharani</h2>
           <p className="text-md md:text-lg lg:text-xl md:mb-2">Daughter of</p>
           <p className="text-md md:text-lg lg:text-xl mb-4 md:mb-6 w-[220px] md:w-full">Bapak Azra Erwan Sofyan (Alm) & Ibu Karina Yulianti Dewi</p>
-          <a
+          {/* <a
             href="https://www.instagram.com/misshahya/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-primary/80 hover:text-primary transition-colors text-sm md:text-lg"
           >
             @misshahya
-          </a>
+          </a> */}
         </div>
       </motion.div>
       <div
